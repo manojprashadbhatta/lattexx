@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LaTeX Introduction & Commands</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    h1 {
+      color: #007BFF;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #2980b9;
+      margin-top: 40px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    .command-block {
+      background: #ffffff;
+      border-left: 5px solid #3498db;
+      padding: 15px 20px;
+      margin: 20px 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+    }
+
+    .command-block pre {
+      background-color: #ecf0f1;
+      padding: 10px;
+      overflow-x: auto;
+      border-radius: 4px;
+    }
+
+    .description {
+      margin-top: 10px;
+    }
+
+    code {
+      color: #c7254e;
+      background-color: #f9f2f4;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+
+    .floating-link {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #28a745;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: background-color 0.3s, transform 0.2s;
+      z-index: 1000;
+    }
+
+    .floating-link:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+    }
+
+    .floating-link i {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to Today’s Section</h1>
+
+  <p><b><i>First of all, we should know about LaTeX.</i></b></p>
+
+  <p>
+    <b>LaTeX</b> (pronounced <i>Lay-tech</i> or <i>Lah-tech</i>) is a high-quality typesetting system used for creating well-structured and professionally formatted documents, especially in academic, scientific, and technical fields. Unlike traditional word processors, LaTeX is not WYSIWYG (What You See Is What You Get); instead, you write plain text with markup commands to define the structure (like sections, formulas, tables, and references). It excels at handling complex mathematical equations, citations, and consistent formatting. LaTeX is widely used for writing research papers, theses, books, and presentations, offering precise control over document layout and style.
+  </p>
+
+  <p><b>Now, we have to learn how to download LaTeX.</b></p>
+
+  <p>
+    You can write LaTeX code in VS Code, but it can be difficult to configure properly. So we recommend an easier and more user-friendly option:
+  </p>
+
+  <p>
+    Use a free online cloud-based LaTeX editor called <b>Overleaf</b>. Click the floating button to go to Overleaf and start using it.
+  </p>
+
+  <!-- BEGIN: LaTeX Commands Section -->
+  <h2>📘 Basic LaTeX Commands and Explanations</h2>
+
+  <div class="command-block">
+    <h3>Document Setup</h3>
+    <pre>\documentclass{article}</pre>
+    <div class="description">Defines the type of document (e.g., article, book).</div>
+  </div>
+
+  <div class="command-block">
+    <h3>Packages</h3>
+    <pre>\usepackage{amsmath}</pre>
+    <div class="description">Enhances math formatting and structure.</div>
+    <pre>\usepackage{graphicx}</pre>
+    <div class="description">Allows you to include images using <code>\includegraphics</code>.</div>
+  </div>
+
+  <div class="command-block">
+    <h3>Start and End Document</h3>
+    <pre>
+\begin{document}
+...
+\end{document}
+    </pre>
+    <div class="description">All visible content must be placed between these lines.</div>
+  </div>
+
+  <div class="command-block">
+    <h3>Text Formatting</h3>
+    <pre>\textbf{Bold Text}</pre>
+    <pre>\textit{Italic Text}</pre>
+    <pre>\underline{Underlined Text}</pre>
+    <div class="description">Formats text as bold, italic, or underlined.</div>
+  </div>
+
+  <div class="command-block">
+    <h3>Sections</h3>
+    <pre>\section{Main Section}</pre>
+    <pre>\subsection{Subsection}</pre>
+    <pre>\subsubsection{Subsubsection}</pre>
+    <div class="description">Organizes content into hierarchical headings.</div>
+  </div>
+
+  <div class="command-block">
+    <h3>Lists</h3>
+    <pre>
+\begin{itemize}
+  \item First item
+  \item Second item
+\end{itemize}
+    </pre>
+    <div class="description">Creates a bullet list.</div>
+
+    <pre>
+\begin{enumerate}
+  \item First item
+  \item Second item
+\end{enumerate}
+    </pre>
+    <div class="description">Creates a numbered list.</div>
+  </div>
+
+  <div class="command-block">
+    <h3>Math Mode</h3>
+    <pre>Inline: $E = mc^2$</pre>
+    <pre>
+Display:
+\[
+  a^2 + b^2 = c^2
+\]
+    </pre>
+    <div class="description">Allows writing mathematical expressions inline or in display mode.</div>
+  </div>
+
+  <div class="command-block">
+    <h3>Line Breaks and Paragraphs</h3>
+    <pre>This is a line.\\</pre>
+    <pre>(Leave a blank line to start a new paragraph.)</pre>
+    <div class="description">Use <code>\\</code> for line breaks and blank lines for new paragraphs.</div>
+  </div>
+
+  <div class="command-block">
+    <h3>Comments</h3>
+    <pre>% This is a comment</pre>
+    <div class="description">Anything after <code>%</code> is ignored by LaTeX.</div>
+  </div>
+
+  <!-- END: LaTeX Commands Section -->
+
+  <!-- Floating Overleaf Button -->
+  <a href="https://www.overleaf.com/" target="_blank" class="floating-link">
+    <i class="fas fa-external-link-alt"></i> Try Overleaf
+  </a>
+
+</body>
+</html>
